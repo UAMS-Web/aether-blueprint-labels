@@ -59,3 +59,15 @@ Oldest first, one entry per closed decision, so **a new entry is appended to the
 **Rejected.** A core patch: the point of the add-on is to avoid one. Decorating the `translator` service so a key lookup reads the blueprint: it changes every `__()` call in the request, matches keys by pattern, and cannot tell a create label from another message. A macro: `Collection` does not use `Macroable` for `createLabel()`, and a macro cannot replace an existing method. Costs of the choice: an application or another add-on that rebinds the same contract replaces this one, and the subclass must follow `Statamic\Entries\Collection` through upgrades; both are covered by the Integration test that asserts the built class, run on the lowest and highest supported `statamic/cms` by the compatibility jobs.
 
 **Companion.** `UAMS-Web/aether-blueprint-labels#2`.
+
+---
+
+## 2026-11-24: Bind a taxonomy subclass for the create-term label, as for collections (create labels)
+
+**Decision.** The service provider also rebinds `Statamic\Contracts\Taxonomies\Taxonomy` to `UAMSWeb\Aether\BlueprintLabels\Taxonomies\Taxonomy`, a subclass that overrides `createLabel()` through the shared `Labels\CreateLabel`, in `bootAddon()` beside the collection binding.
+
+**Why.** `Taxonomy::createLabel()` has the same shape as `Collection::createLabel()` (a plain method on a core class, no hook), and `TaxonomyRepository::make()` builds every taxonomy through `app(Taxonomy::class)`, so the mechanism recorded for the collection label applies unchanged. Measured against `statamic/cms` v6.43.1: with the taxonomy binding commented out, two tests fail (the built class and the per-blueprint label); restored, all pass.
+
+**Rejected.** The alternatives rejected for the collection label, for the same reasons. One shared subclass for both: collections and taxonomies share no base class, so each needs its own.
+
+**Companion.** `UAMS-Web/aether-blueprint-labels#3`.

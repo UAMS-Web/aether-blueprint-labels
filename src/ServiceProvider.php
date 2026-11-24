@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace UAMSWeb\Aether\BlueprintLabels;
 
 use Statamic\Contracts\Entries\Collection as CollectionContract;
+use Statamic\Contracts\Taxonomies\Taxonomy as TaxonomyContract;
 use Statamic\Providers\AddonServiceProvider;
 use UAMSWeb\Aether\BlueprintLabels\Entries\Collection;
+use UAMSWeb\Aether\BlueprintLabels\Taxonomies\Taxonomy;
 
 /**
  * Service provider for the add-on.
@@ -44,5 +46,8 @@ class ServiceProvider extends AddonServiceProvider
         // Make every collection the add-on's subclass, so its create label can follow the blueprint.
         // Done here rather than in register(), which runs before Statamic binds its own collection.
         $this->app->bind(CollectionContract::class, Collection::class);
+
+        // Do the same for every taxonomy, so its create label can follow the blueprint
+        $this->app->bind(TaxonomyContract::class, Taxonomy::class);
     }
 }

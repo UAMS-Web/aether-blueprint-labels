@@ -12,6 +12,16 @@ A collection's create-entry button and page title read their text from the appli
 
 A translation that is not a string, such as a nested array, is skipped as if it were missing, so the label is always text. A `blueprint` parameter that is empty or is not a string is ignored.
 
+## Create-term labels
+
+A taxonomy's create-term button works the same way, with the taxonomy's handle and `_taxonomy_create_term` in place of the collection's and `_collection_create_entry`.
+
+| Translation key | Used when | Effect |
+| --- | --- | --- |
+| `messages.<taxonomy>_taxonomy_create_term.<blueprint>` | The request's `blueprint` is that blueprint's handle | The label for that blueprint |
+| `messages.<taxonomy>_taxonomy_create_term` | No blueprint is requested, or the blueprint has no translation | The label for the taxonomy |
+| (none) | Neither key has a translation | `Create Term` |
+
 ## Example
 
 Write each key as a flat key, with the blueprint after a dot, in the application's `lang/en/messages.php`:
@@ -25,3 +35,13 @@ return [
 ```
 
 The `pages` collection's create button then reads `Create News Article` for the `news` blueprint and `Create Page` for every other blueprint.
+
+The `tags` taxonomy takes the same shape:
+
+```php
+// lang/en/messages.php
+return [
+    'tags_taxonomy_create_term' => 'Create Tag',
+    'tags_taxonomy_create_term.topic' => 'Create Topic Tag',
+];
+```

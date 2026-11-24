@@ -14,27 +14,6 @@ use UAMSWeb\Aether\BlueprintLabels\Entries\Collection;
  *
  * @command  vendor/bin/pest tests/Integration/CollectionCreateLabelTest.php
  */
-
-/**
- * Set the application's `messages` translations, replacing what was loaded.
- *
- * @param  array<string, mixed>  $messages  The `messages.php` entries, by flat key.
- */
-function setMessages(array $messages): void
-{
-    app('translator')->setLoaded(['*' => ['messages' => ['en' => $messages]]]);
-}
-
-/**
- * Set the blueprint query parameter of the current request.
- *
- * @param  mixed  $blueprint  The parameter's value, or null for none.
- */
-function requestBlueprint(mixed $blueprint): void
-{
-    app('request')->query->replace($blueprint === null ? [] : ['blueprint' => $blueprint]);
-}
-
 it('makes every collection the add-on subclass', function (): void {
     // Expect Statamic to build the add-on's class, which stock Statamic does not
     expect(CollectionFacade::make('pages'))->toBeInstanceOf(Collection::class);
