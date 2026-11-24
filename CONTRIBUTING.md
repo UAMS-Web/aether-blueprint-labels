@@ -1,4 +1,4 @@
-# Contributing to statamic-addon-template
+# Contributing to aether-blueprint-labels
 
 <!-- uams-claude-skills:begin -->
 ## Branches and environments

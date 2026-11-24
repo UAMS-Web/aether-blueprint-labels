@@ -1,4 +1,4 @@
-Written against v1.4.0.
+Written against v0.1.0.
 
 <What this area is for.>
 
@@ -9,7 +9,7 @@ Written against v1.4.0.
 ## Example
 
 ```php
-// config/statamic-addon-template.php
+// config/<handle>.php
 return [
     'some_key' => 'value',
 ];
