@@ -46,6 +46,6 @@ return [
 - [Development guide](docs/DEVELOPMENT.md): exercising the add-on in a Statamic host, and running the host-bound tests.
 - [Submission checklist](docs/SUBMISSION.md): the Packagist and Marketplace steps.
 - [Decision log](docs/DECISIONS.md): why the repository is the way it is, with the alternatives that lost.
-- The wiki, published from [`docs/wiki/`](docs/wiki/) on each release.
+- The wiki, published from [`docs/wiki/`](docs/wiki/) when a release is published, and by hand.
 
 Contributions follow [`CONTRIBUTING.md`](CONTRIBUTING.md). The add-on's license is MIT. See [`LICENSE`](LICENSE).
