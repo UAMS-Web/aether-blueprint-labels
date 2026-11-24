@@ -2,7 +2,7 @@
 
 A Statamic add-on that shows a label chosen by the blueprint on the Control Panel's create-entry and create-term buttons, without patching `statamic/cms`.
 
-It is the interim home for two behaviors that `UAMS-Web/patches-statamic-cms` carries as patches while they are offered upstream, so a site can drop the patches before a `statamic/cms` release carries the behavior. The create-entry label is built; the create-term label lands in its own ticket.
+It is the interim home for two behaviors that `UAMS-Web/patches-statamic-cms` carries as patches while they are offered upstream, so a site can drop the patches before a `statamic/cms` release carries the behavior. Both labels are built: the create-entry label for collections and the create-term label for taxonomies.
 
 ## Requirements
 
@@ -29,6 +29,17 @@ return [
 ```
 
 The wiki's [Reference](docs/wiki/Reference.md) lists the cases.
+
+## Create-term labels
+
+A taxonomy's create-term label works the same way, with `messages.<taxonomy>_taxonomy_create_term.<blueprint>`, then `messages.<taxonomy>_taxonomy_create_term`, then `Create Term`:
+
+```php
+return [
+    'tags_taxonomy_create_term' => 'Create Tag',
+    'tags_taxonomy_create_term.topic' => 'Create Topic Tag',
+];
+```
 
 ## Documentation
 
