@@ -24,4 +24,4 @@ The floors are under [Requirements](#requirements). Statamic discovers the add-o
 - [Decision log](docs/DECISIONS.md): why the repository is the way it is, with the alternatives that lost.
 - The wiki, published from [`docs/wiki/`](docs/wiki/) on each release.
 
-Contributions follow [`CONTRIBUTING.md`](CONTRIBUTING.md). The add-on has no license yet: the choice waits on the general decision from UAMS legal in [`UAMS-Web/uams-statamic#261`](https://github.com/UAMS-Web/uams-statamic/issues/261), and a `LICENSE` file and `composer.json`'s `license` field follow it.
+Contributions follow [`CONTRIBUTING.md`](CONTRIBUTING.md). The add-on's license is MIT. See [`LICENSE`](LICENSE).
