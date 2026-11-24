@@ -25,18 +25,23 @@ class ServiceProvider extends AddonServiceProvider
      * must match `vite.config.js`; the built files are committed under
      * `resources/dist`.
      *
-     * @var array{input: list<string>, publicDirectory: string}
+     * A constant, because a mutation of a property default has no executable line to
+     * select a test by, while a constant's mutants run the tests that cover this class.
      */
-    // A property default holds no executable line, so coverage reports each item as uncovered
-    // although tests/Unit/ViteBuildTest.php pins the whole array against vite.config.js.
-    // @pest-mutate-ignore: RemoveArrayItem
-    protected $vite = [
+    private const array VITE = [
         'input' => [
             'resources/js/cp.js',
             'resources/css/cp.css',
         ],
         'publicDirectory' => 'resources/dist',
     ];
+
+    /**
+     * The Vite build Statamic registers for the add-on.
+     *
+     * @var array{input: list<string>, publicDirectory: string}
+     */
+    protected $vite = self::VITE;
 
     /**
      * Boot the add-on once Statamic has booted.
