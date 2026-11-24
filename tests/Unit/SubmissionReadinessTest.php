@@ -29,7 +29,7 @@ it('declares every top-level field a public package needs', function (string $fi
     // Expect the field present and filled in
     expect(submissionManifest())->toHaveKey($field);
     expect(submissionManifest()[$field])->not->toBeEmpty();
-})->with(['name', 'description', 'keywords', 'type', 'authors', 'support', 'autoload']);
+})->with(['name', 'description', 'keywords', 'type', 'authors', 'support', 'autoload', 'license']);
 
 it('is a statamic-addon under the uams-web vendor', function (): void {
     // Read the manifest
