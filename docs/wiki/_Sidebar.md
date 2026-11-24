@@ -7,7 +7,7 @@
 
 **Guides**
 
-- [Task guide](Task-guide.md)
+- [Label a taxonomy's create button](Label-a-taxonomys-create-button.md)
 
 **Troubleshooting**
 
@@ -16,7 +16,6 @@
 **Reference**
 
 - [Reference](Reference.md)
-- [README](https://github.com/UAMS-Web/aether-blueprint-labels#readme)
 
 **Project**
 
