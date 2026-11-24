@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace UAMSWeb\Aether\BlueprintLabels;
 
+use Statamic\Contracts\Entries\Collection as CollectionContract;
 use Statamic\Providers\AddonServiceProvider;
+use UAMSWeb\Aether\BlueprintLabels\Entries\Collection;
 
 /**
  * Service provider for the add-on.
@@ -39,6 +41,8 @@ class ServiceProvider extends AddonServiceProvider
      */
     public function bootAddon(): void
     {
-        // Register the add-on's behavior here
+        // Make every collection the add-on's subclass, so its create label can follow the blueprint.
+        // Done here rather than in register(), which runs before Statamic binds its own collection.
+        $this->app->bind(CollectionContract::class, Collection::class);
     }
 }

@@ -47,3 +47,15 @@ Oldest first, one entry per closed decision, so **a new entry is appended to the
 **Rejected.** Waiting for the general decision from UAMS legal: the sibling add-ons already ship MIT, and a public repository with no license grants no rights to its users.
 
 **Companion.** `UAMS-Web/aether-blueprint-labels#4`.
+
+---
+
+## 2026-11-24: Bind a collection subclass to change the create-entry label (create labels)
+
+**Decision.** The service provider rebinds `Statamic\Contracts\Entries\Collection` to `UAMSWeb\Aether\BlueprintLabels\Entries\Collection`, a subclass that overrides `createLabel()`. The lookup lives in `Labels\CreateLabel`, which the taxonomy label reuses. The rebinding runs in `bootAddon()`, after Statamic has registered its own binding.
+
+**Why.** `createLabel()` is a plain method on a core class with no hook, filter or event. Statamic builds every collection through `app(Collection::class)` (`CollectionRepository::make()`), so a rebound subclass changes the result everywhere the Control Panel reads it, with no edit to `statamic/cms`. Measured against `statamic/cms` v6.43.1: with the binding, `Collection::make('pages')` is the add-on's class and returns the per-blueprint label; with it commented out, two tests fail (the class and the per-blueprint label).
+
+**Rejected.** A core patch: the point of the add-on is to avoid one. Decorating the `translator` service so a key lookup reads the blueprint: it changes every `__()` call in the request, matches keys by pattern, and cannot tell a create label from another message. A macro: `Collection` does not use `Macroable` for `createLabel()`, and a macro cannot replace an existing method. Costs of the choice: an application or another add-on that rebinds the same contract replaces this one, and the subclass must follow `Statamic\Entries\Collection` through upgrades; both are covered by the Integration test that asserts the built class, run on the lowest and highest supported `statamic/cms` by the compatibility jobs.
+
+**Companion.** `UAMS-Web/aether-blueprint-labels#2`.

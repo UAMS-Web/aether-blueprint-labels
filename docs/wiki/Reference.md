@@ -1,16 +1,27 @@
-Written against v0.1.0.
+Written against the unreleased `main` branch.
 
-<What this area is for.>
+## Create-entry labels
 
-| Key | Values | Default | Effect |
-| --- | --- | --- | --- |
-| `some_key` | `value`, `other` | `value` | <What it does.> |
+A collection's create-entry button and page title read their text from the application's `messages` translations, and the add-on lets a blueprint choose a different text. The Control Panel passes the blueprint to the create page as the `blueprint` query parameter, and the add-on reads it.
+
+| Translation key | Used when | Effect |
+| --- | --- | --- |
+| `messages.<collection>_collection_create_entry.<blueprint>` | The request's `blueprint` is that blueprint's handle | The label for that blueprint |
+| `messages.<collection>_collection_create_entry` | No blueprint is requested, or the blueprint has no translation | The label for the collection |
+| (none) | Neither key has a translation | `Create Entry` |
+
+A translation that is not a string, such as a nested array, is skipped as if it were missing, so the label is always text. A `blueprint` parameter that is empty or is not a string is ignored.
 
 ## Example
 
+Write each key as a flat key, with the blueprint after a dot, in the application's `lang/en/messages.php`:
+
 ```php
-// config/<handle>.php
+// lang/en/messages.php
 return [
-    'some_key' => 'value',
+    'pages_collection_create_entry' => 'Create Page',
+    'pages_collection_create_entry.news' => 'Create News Article',
 ];
 ```
+
+The `pages` collection's create button then reads `Create News Article` for the `news` blueprint and `Create Page` for every other blueprint.
