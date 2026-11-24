@@ -8,6 +8,7 @@
         "labels"
     ],
     "type": "statamic-addon",
+    "license": "MIT",
     "homepage": "https://github.com/UAMS-Web/aether-blueprint-labels",
     "authors": [
         {

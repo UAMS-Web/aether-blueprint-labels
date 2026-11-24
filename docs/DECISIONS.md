@@ -35,3 +35,15 @@ Oldest first, one entry per closed decision, so **a new entry is appended to the
 **Rejected.** Keeping a renamed, empty config file: it would publish a file with no setting in it and need a test that pins nothing. Snapshotting the synced files into the repository: every add-on would begin with a stale copy that conflicts with its first sync pull request. Copying a license from an existing add-on: legal has not decided which license applies.
 
 **Companion.** `UAMS-Web/aether-blueprint-labels#1` and `UAMS-Web/uams-statamic#261`.
+
+---
+
+## 2026-11-24: Licensed under MIT, as the other Aether add-ons are (licensing)
+
+**Decision.** The add-on carries the MIT license, held by the University of Arkansas for Medical Sciences, as `LICENSE` at the root and `"license": "MIT"` in `composer.json`. The text is identical to `UAMS-Web/aether-people`'s. This supersedes the earlier entry's note that the license waits on `UAMS-Web/uams-statamic#261`.
+
+**Why.** The repository is public, and GitHub reports no license for one without a license file. `UAMS-Web/aether-people` and `UAMS-Web/aether-redirects` already ship the MIT license under the same holder.
+
+**Rejected.** Waiting for the general decision from UAMS legal: the sibling add-ons already ship MIT, and a public repository with no license grants no rights to its users.
+
+**Companion.** `UAMS-Web/aether-blueprint-labels#4`.
