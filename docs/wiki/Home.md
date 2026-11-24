@@ -1,17 +1,15 @@
-Replace this paragraph with what the add-on does and who it is for: per-blueprint create labels on the Control Panel's create-entry and create-term buttons.
+Aether Blueprint Labels lets a blueprint choose the text of the Control Panel's create-entry and create-term labels, from the application's own translations, without patching `statamic/cms`. It is for sites that give one collection or taxonomy several blueprints and want each blueprint's create page to say what it creates.
 
-This wiki holds the documentation: a walkthrough, task guides by role, the reference, and troubleshooting. The [README](https://github.com/UAMS-Web/aether-blueprint-labels#readme) keeps an overview, the requirements and installation.
-
-The pages in this folder are skeletons, one per page shape the `github-wiki` skill describes. Copy each, fill it in, rename it for its subject, and keep Home, the sidebar and the footer listing the same pages under the same labels.
+This wiki holds the documentation: a walkthrough, a guide, the reference, and troubleshooting. The [README](https://github.com/UAMS-Web/aether-blueprint-labels#readme) keeps an overview, the requirements and installation.
 
 ## Getting started
 
 - [Installation (README)](https://github.com/UAMS-Web/aether-blueprint-labels#installation): add the package to a Statamic install.
-- [Walkthrough](Walkthrough.md): a first use of the add-on, from nothing to a visible result.
+- [Walkthrough](Walkthrough.md): give one blueprint its own create-entry label, from nothing to a visible result.
 
 ## Guides
 
-- [Task guide](Task-guide.md): one task, the steps, and the reference it used.
+- [Label a taxonomy's create button](Label-a-taxonomys-create-button.md): give a taxonomy blueprint its own create-term label.
 
 ## Troubleshooting
 
@@ -19,7 +17,7 @@ The pages in this folder are skeletons, one per page shape the `github-wiki` ski
 
 ## Reference
 
-- [Reference](Reference.md): every setting, tag, command or permission of one area.
+- [Reference](Reference.md): every translation key the add-on reads, and the order it reads them in.
 
 ## Project
 
