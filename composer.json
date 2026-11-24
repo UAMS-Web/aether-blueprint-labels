@@ -1,12 +1,14 @@
 {
-    "name": "uams-web/statamic-addon-template",
-    "description": "Starting point for UAMS Statamic add-ons. Replace this description when you start an add-on from it.",
+    "name": "uams-web/aether-blueprint-labels",
+    "description": "Per-blueprint create labels for the Statamic Control Panel: the create-entry and create-term buttons show a label chosen by the blueprint, without patching statamic/cms.",
     "keywords": [
         "statamic",
-        "statamic-addon"
+        "statamic-addon",
+        "blueprint",
+        "labels"
     ],
     "type": "statamic-addon",
-    "homepage": "https://github.com/UAMS-Web/statamic-addon-template",
+    "homepage": "https://github.com/UAMS-Web/aether-blueprint-labels",
     "authors": [
         {
             "name": "UAMS Web Services"
@@ -17,27 +19,27 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/UAMS-Web/statamic-addon-template/issues",
-        "source": "https://github.com/UAMS-Web/statamic-addon-template"
+        "issues": "https://github.com/UAMS-Web/aether-blueprint-labels/issues",
+        "source": "https://github.com/UAMS-Web/aether-blueprint-labels"
     },
     "autoload": {
         "psr-4": {
-            "UAMSWeb\\AddonTemplate\\": "src/"
+            "UAMSWeb\\Aether\\BlueprintLabels\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "UAMSWeb\\AddonTemplate\\Tests\\": "tests/"
+            "UAMSWeb\\Aether\\BlueprintLabels\\Tests\\": "tests/"
         }
     },
     "extra": {
         "statamic": {
-            "name": "Addon Template",
-            "description": "Replace this description when you start an add-on from the template."
+            "name": "Aether Blueprint Labels",
+            "description": "Shows a label chosen by the blueprint on the Control Panel's create-entry and create-term buttons."
         },
         "laravel": {
             "providers": [
-                "UAMSWeb\\AddonTemplate\\ServiceProvider"
+                "UAMSWeb\\Aether\\BlueprintLabels\\ServiceProvider"
             ]
         },
         "composer-exit-on-patch-failure": true

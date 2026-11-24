@@ -1,4 +1,4 @@
-Written against v1.4.0.
+Written against v0.1.0.
 
 <The situation, in a sentence.>
 

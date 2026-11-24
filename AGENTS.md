@@ -1,4 +1,4 @@
-# Agent instructions for statamic-addon-template
+# Agent instructions for aether-blueprint-labels
 
 This file is the single source of agent instructions for this repository. Claude Code, Cursor and Codex all read it directly; there is no `CLAUDE.md`, because Claude Code reads `AGENTS.md` only when `CLAUDE.md` is absent. Put instructions here, never in a `CLAUDE.md`.
 
@@ -47,7 +47,7 @@ Skills: [`code-quality`](.claude/skills/code-quality/SKILL.md), [`decision-log`]
 
 ## About this repository
 
-A Statamic add-on (`uams-web/statamic-addon-template`, namespace `UAMSWeb\AddonTemplate`). Replace this paragraph with what it does. It is a Composer library with no `artisan`, `.env`, database or front end of its own; a host application boots it through `extra.laravel.providers`. The `statamic-package-conventions` skill covers what that changes.
+A Statamic add-on (`uams-web/aether-blueprint-labels`, namespace `UAMSWeb\Aether\BlueprintLabels`). It shows a label chosen by the blueprint on the Control Panel's create-entry and create-term buttons, without patching `statamic/cms` (the behavior `UAMS-Web/patches-statamic-cms#25` and `UAMS-Web/patches-statamic-cms#26` offer upstream; each has its own ticket here). It is a Composer library with no `artisan`, `.env`, database or front end of its own; a host application boots it through `extra.laravel.providers`. The `statamic-package-conventions` skill covers what that changes.
 
 ### Commands
 
